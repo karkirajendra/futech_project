@@ -34,7 +34,7 @@ class AuthController extends Controller
     public function register(RegisterRequest $request): JsonResponse
     {
         try {
-            $user = $this->authService->register($request->validated());
+            $user = $this->authService->register($request->valida--+ted());
             $this->otpService->send($user->email, 'email_verification');
 
             return response()->json([
